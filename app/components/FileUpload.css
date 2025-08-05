@@ -1,0 +1,280 @@
+.file-upload-container {
+  margin-bottom: 20px;
+}
+
+.upload-area {
+  border: 2px dashed #4a5568;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #1a1a1a;
+  color: #e2e8f0;
+}
+
+.upload-area:hover {
+  border-color: #667eea;
+  background: #2d2d2d;
+}
+
+.upload-area.drag-active {
+  border-color: #667eea;
+  background: #2d3748;
+  transform: scale(1.02);
+}
+
+.upload-area.uploading {
+  border-color: #48bb78;
+  background: #2d3748;
+  cursor: not-allowed;
+}
+
+.upload-content h3 {
+  margin: 16px 0 8px 0;
+  color: #e2e8f0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.upload-content p {
+  margin: 0 0 16px 0;
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.upload-content svg {
+  color: #667eea;
+  margin-bottom: 16px;
+}
+
+.supported-formats {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: #2d3748;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.supported-formats small {
+  color: #a0aec0;
+  font-size: 12px;
+}
+
+.upload-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.upload-status p {
+  margin: 0;
+  color: #48bb78;
+  font-weight: 500;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  color: #667eea;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Uploaded Files */
+.uploaded-files {
+  margin-top: 20px;
+  padding: 16px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  border: 1px solid #2d3748;
+}
+
+.uploaded-files h4 {
+  margin: 0 0 16px 0;
+  color: #e2e8f0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background: #2d3748;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: background 0.2s;
+}
+
+.file-item:hover {
+  background: #4a5568;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.file-info svg {
+  color: #667eea;
+  flex-shrink: 0;
+}
+
+.file-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.filename {
+  color: #e2e8f0;
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-type {
+  color: #a0aec0;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.ask-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.ask-btn:hover:not(:disabled) {
+  background: #5a67d8;
+}
+
+.ask-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.remove-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  background: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.remove-btn:hover {
+  background: #c53030;
+}
+
+.analyzing-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #2d3748;
+  border-radius: 8px;
+  margin-top: 12px;
+  color: #667eea;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .upload-area {
+    padding: 20px;
+  }
+  
+  .upload-content h3 {
+    font-size: 16px;
+  }
+  
+  .file-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .file-actions {
+    align-self: flex-end;
+  }
+  
+  .supported-formats {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* Animation for file items */
+.file-item {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Drag and drop visual feedback */
+.upload-area.drag-active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+/* File type indicators */
+.file-item[data-type="image"] .file-info svg {
+  color: #48bb78;
+}
+
+.file-item[data-type="code"] .file-info svg {
+  color: #ed8936;
+}
+
+.file-item[data-type="document"] .file-info svg {
+  color: #4299e1;
+}

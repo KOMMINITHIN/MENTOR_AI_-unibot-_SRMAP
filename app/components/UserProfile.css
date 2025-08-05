@@ -1,0 +1,395 @@
+.profile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.profile-modal {
+  background: #1a1a1a;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow: hidden;
+  border: 1px solid #2d2d2d;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #2d2d2d;
+  background: #171717;
+}
+
+.profile-header h2 {
+  margin: 0;
+  color: #e2e8f0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #a0aec0;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.close-btn:hover {
+  background: #2d2d2d;
+  color: #e2e8f0;
+}
+
+.profile-tabs {
+  display: flex;
+  background: #171717;
+  border-bottom: 1px solid #2d2d2d;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 16px 20px;
+  background: transparent;
+  border: none;
+  color: #a0aec0;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.tab-btn:hover {
+  background: #2d2d2d;
+  color: #e2e8f0;
+}
+
+.tab-btn.active {
+  background: #1a1a1a;
+  color: #667eea;
+  border-bottom: 2px solid #667eea;
+}
+
+.profile-content {
+  padding: 24px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* Profile Tab */
+.avatar-section {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.avatar-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #667eea;
+  object-fit: cover;
+}
+
+.avatar-edit-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  background: #667eea;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.avatar-edit-btn:hover {
+  background: #5a67d8;
+  transform: scale(1.1);
+}
+
+.profile-info {
+  color: #e2e8f0;
+}
+
+.profile-field {
+  margin-bottom: 16px;
+}
+
+.profile-field h3 {
+  margin: 0 0 4px 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.user-role {
+  margin: 0 0 16px 0;
+  color: #667eea;
+  font-weight: 500;
+}
+
+.profile-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.profile-field p {
+  margin: 0;
+  color: #e2e8f0;
+  font-size: 14px;
+}
+
+.edit-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: all 0.2s;
+  margin-top: 20px;
+}
+
+.edit-btn:hover {
+  background: #5a67d8;
+  transform: translateY(-1px);
+}
+
+/* Edit Form */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.profile-input,
+.profile-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background: #2d2d2d;
+  border: 1px solid #4a5568;
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.profile-input:focus,
+.profile-textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.profile-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.save-btn {
+  background: #48bb78;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.save-btn:hover {
+  background: #38a169;
+}
+
+.cancel-btn {
+  background: transparent;
+  color: #a0aec0;
+  border: 1px solid #4a5568;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.cancel-btn:hover {
+  background: #2d2d2d;
+  color: #e2e8f0;
+}
+
+/* Settings Tab */
+.settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.setting-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: #2d2d2d;
+  border-radius: 12px;
+  border: 1px solid #4a5568;
+}
+
+.setting-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.setting-info svg {
+  color: #667eea;
+  flex-shrink: 0;
+}
+
+.setting-info h4 {
+  margin: 0 0 4px 0;
+  color: #e2e8f0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.setting-info p {
+  margin: 0;
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.setting-select {
+  background: #1a1a1a;
+  border: 1px solid #4a5568;
+  border-radius: 8px;
+  color: #e2e8f0;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  min-width: 140px;
+}
+
+.setting-select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #4a5568;
+  transition: 0.3s;
+  border-radius: 24px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: #667eea;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(26px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-modal {
+    width: 95%;
+    max-height: 90vh;
+  }
+  
+  .profile-content {
+    padding: 16px;
+  }
+  
+  .setting-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .setting-select {
+    width: 100%;
+  }
+}

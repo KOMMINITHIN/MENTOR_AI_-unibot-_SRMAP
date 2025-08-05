@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connection Test</title>
+</head>
+<body>
+    <h1>Backend Connection Test</h1>
+    <button onclick="testConnection()">Test Backend Connection</button>
+    <div id="result"></div>
+
+    <script>
+        async function testConnection() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Testing...';
+            
+            try {
+                const response = await fetch('http://localhost:8000/health');
+                const data = await response.json();
+                resultDiv.innerHTML = `
+                    <h3>✅ Backend Connected Successfully!</h3>
+                    <p>Status: ${data.status}</p>
+                    <p>Version: ${data.version}</p>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <h3>❌ Backend Connection Failed</h3>
+                    <p>Error: ${error.message}</p>
+                    <p>Make sure backend is running on port 8000</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

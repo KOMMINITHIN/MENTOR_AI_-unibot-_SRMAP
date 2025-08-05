@@ -1,0 +1,38 @@
+{
+  "name": "version2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.2.0",
+    "@react-three/fiber": "^9.1.2",
+    "@tailwindcss/postcss": "^4.1.8",
+    "autoprefixer": "^10.4.21",
+    "framer-motion": "^12.17.3",
+    "katex": "^0.16.22",
+    "lucide-react": "^0.514.0",
+    "next": "15.3.3",
+    "postcss": "^8.5.4",
+    "prismjs": "^1.30.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-katex": "^3.1.0",
+    "react-syntax-highlighter": "^15.6.1",
+    "three": "^0.177.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.3",
+    "tailwindcss": "^4.1.8",
+    "typescript": "^5"
+  }
+}

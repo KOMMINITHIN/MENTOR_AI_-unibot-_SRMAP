@@ -1,0 +1,267 @@
+.voice-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: #2d2d2d;
+  border-radius: 12px;
+  border: 1px solid #4d4d4d;
+  margin-bottom: 12px;
+}
+
+.voice-input-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.voice-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #4a5568;
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.voice-btn:hover {
+  background: #667eea;
+  transform: scale(1.05);
+}
+
+.voice-btn.listening {
+  background: #e53e3e;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(229, 62, 62, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(229, 62, 62, 0);
+  }
+}
+
+.listening-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e53e3e;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pulse {
+  width: 8px;
+  height: 8px;
+  background: #e53e3e;
+  border-radius: 50%;
+  animation: pulse-dot 1s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+.voice-output-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.speech-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #a0aec0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.speech-btn:hover {
+  background: #4a5568;
+  color: #e2e8f0;
+}
+
+.speech-btn.enabled {
+  color: #48bb78;
+}
+
+.speech-btn.disabled {
+  color: #718096;
+}
+
+.stop-speech-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 4px;
+  background: #e53e3e;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stop-speech-btn:hover {
+  background: #c53030;
+}
+
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #a0aec0;
+}
+
+.language-select {
+  background: #1a1a1a;
+  border: 1px solid #4a5568;
+  border-radius: 6px;
+  color: #e2e8f0;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.language-select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.language-select option {
+  background: #1a1a1a;
+  color: #e2e8f0;
+}
+
+.voice-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #667eea;
+  font-weight: 500;
+}
+
+.voice-not-supported {
+  padding: 8px 12px;
+  background: #2d3748;
+  border-radius: 8px;
+  color: #a0aec0;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .voice-controls {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .language-selector {
+    order: 3;
+    width: 100%;
+  }
+  
+  .language-select {
+    width: 100%;
+  }
+  
+  .voice-status {
+    order: 4;
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+
+/* Animation for voice wave */
+.voice-wave {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.voice-wave span {
+  width: 3px;
+  height: 12px;
+  background: #667eea;
+  border-radius: 2px;
+  animation: wave 1.2s infinite ease-in-out;
+}
+
+.voice-wave span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.voice-wave span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.voice-wave span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+@keyframes wave {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+  }
+  20% {
+    transform: scaleY(1);
+  }
+}
+
+/* Accessibility */
+.voice-btn:focus,
+.speech-btn:focus,
+.stop-speech-btn:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Dark theme adjustments */
+@media (prefers-color-scheme: dark) {
+  .voice-controls {
+    background: #2d2d2d;
+    border-color: #4d4d4d;
+  }
+  
+  .language-select {
+    background: #1a1a1a;
+    border-color: #4a5568;
+    color: #e2e8f0;
+  }
+}
