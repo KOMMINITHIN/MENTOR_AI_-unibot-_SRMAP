@@ -2,8 +2,8 @@ import requests
 import json
 
 # Test OpenRouter API
-OPENROUTER_API_KEY = "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"
-OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
+OPENROUTER_API_KEY = "your key"
+OPENROUTER_API_URL = "kkk"
 
 def test_openrouter():
     print("🧪 Testing OpenRouter API...")
